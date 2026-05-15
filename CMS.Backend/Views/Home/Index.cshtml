@@ -1,8 +1,103 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<div class="container mt-5">
 
-<div class="text-center">
-    <h1 class="display-4">Nguyễn Văn Chính</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="p-5 mb-4 bg-dark text-white rounded-4 shadow-lg">
+
+        <div class="container-fluid py-5 text-center">
+
+            <h1 class="display-4 fw-bold text-warning">
+                NGUYỄN VĂN CHÍNH
+            </h1>
+
+            <p class="fs-4 mt-3">
+                Chào mừng đến với hệ thống quản lý CMS ASP.NET Core
+            </p>
+
+            <p class="text-light">
+                Website demo quản lý danh mục, bài viết và thành viên
+            </p>
+
+            <div class="mt-4">
+
+                <a href="/Category" class="btn btn-primary btn-lg me-3">
+                    Quản lý Danh Mục
+                </a>
+
+                <a href="/Post" class="btn btn-success btn-lg me-3">
+                    Bài Viết
+                </a>
+
+                <a href="/User" class="btn btn-warning btn-lg">
+                    Thành Viên
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body">
+
+                    <h2 class="text-primary">
+                        📂 Category
+                    </h2>
+
+                    <p>
+                        Quản lý danh mục bài viết trong hệ thống.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body">
+
+                    <h2 class="text-success">
+                        📰 Post
+                    </h2>
+
+                    <p>
+                        Hiển thị các bài viết mới nhất đẹp mắt.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow border-0 h-100">
+
+                <div class="card-body">
+
+                    <h2 class="text-danger">
+                        👤 User
+                    </h2>
+
+                    <p>
+                        Quản lý thành viên quản trị hệ thống.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
