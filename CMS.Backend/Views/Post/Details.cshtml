@@ -1,0 +1,72 @@
+@model CMS.Data.Entities.Post
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="/Post">Bài viết</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+                </ol>
+            </nav>
+
+            <article class="bg-white p-5 rounded shadow-sm border border-light">
+                <!-- Category Badge -->
+                <div class="mb-3">
+                    <a href="/Post/Index/@Model.CategoryId" class="badge bg-info text-dark px-3 py-2 text-decoration-none fs-6">
+                        <i class="bi bi-tag-fill me-1"></i>@Model.Category?.Name
+                    </a>
+                </div>
+
+                <!-- Title -->
+                <h1 class="display-5 text-primary font-weight-bold mb-3">@Model.Title</h1>
+
+                <!-- Meta Metadata -->
+                <div class="d-flex align-items-center text-muted mb-4 pb-3 border-bottom">
+                    <span class="me-3">
+                        <i class="bi bi-calendar3 me-1"></i> Ngày đăng: @Model.CreatedDate.ToString("dd/MM/yyyy HH:mm")
+                    </span>
+                    <span>
+                        <i class="bi bi-person-fill me-1"></i> Tác giả: Quản trị viên
+                    </span>
+                </div>
+
+                <!-- Featured Image -->
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div class="mb-5 text-center">
+                        <img src="@Model.ImageUrl" class="img-fluid rounded shadow-sm" alt="@Model.Title" style="max-height: 480px; width: 100%; object-fit: cover;">
+                    </div>
+                }
+
+                <!-- Content -->
+                <div class="article-content fs-5 leading-relaxed text-dark-emphasis mb-5">
+                    @Html.Raw(Model.Content?.Replace("\n", "<br/>"))
+                </div>
+
+                <!-- Back button -->
+                <div class="pt-4 border-top text-center">
+                    <a href="javascript:history.back()" class="btn btn-outline-secondary px-4 py-2 rounded-pill">
+                        <i class="bi bi-arrow-left me-1"></i> Quay lại trang trước
+                    </a>
+                    <a href="/Post/Index/@Model.CategoryId" class="btn btn-primary px-4 py-2 rounded-pill ms-2">
+                        <i class="bi bi-grid-fill me-1"></i> Xem cùng chuyên mục
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<style>
+    .article-content {
+        line-height: 1.8;
+        letter-spacing: 0.015em;
+        text-align: justify;
+    }
+</style>
