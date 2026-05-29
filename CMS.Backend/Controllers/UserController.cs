@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using CMS.Data;
 using CMS.Data.Entities;
 using System.Linq;
-
+using Microsoft.AspNetCore.Authorization; // <--- DÒNG NÀY LÀ CỨU TINH CỦA BẠN
 namespace CMS.Backend.Controllers
 {
     public class UserController : Controller
