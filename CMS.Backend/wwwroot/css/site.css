@@ -1,0 +1,85 @@
+﻿     Màu hồng chủ đạo 
+    :root {
+        --pink-primary: #ec4899;
+        --pink-light: #fdf2f8;
+        --pink-soft: #f472b6;
+        --text-pink: #831843;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: var(--pink-light);
+    }
+
+    .access-denied-page {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .access-card {
+        background: white;
+        padding: 60px;
+        border-radius: 50px;
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.2);
+        border: 2px solid rgba(236, 72, 153, 0.1);
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .icon-box {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+        border-radius: 40px;
+        background: linear-gradient(135deg, #f472b6, #ec4899);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        color: white;
+        font-size: 60px;
+        box-shadow: 0 15px 30px rgba(236, 72, 153, 0.3);
+    }
+
+    .access-card h1 {
+        font-size: 100px;
+        font-weight: 900;
+        background: linear-gradient(to right, #ec4899, #db2777);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .btn-back {
+        margin-top: 20px;
+        padding: 15px 40px;
+        border-radius: 20px;
+        background: #ec4899;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.3s;
+        display: inline-block;
+    }
+
+        .btn-back:hover {
+            background: #db2777;
+            transform: translateY(-5px);
+            color: white;
+        }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }

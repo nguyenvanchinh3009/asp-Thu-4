@@ -1,0 +1,26 @@
+﻿@model CMS.Data.Entities.Category
+
+@{
+    ViewData["Title"] = "Thêm danh mục";
+    Layout = "_LayoutAdmin"; // Đảm bảo gọi đúng Layout Admin của bạn
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-4">
+            <h4 class="fw-bold mb-4 text-primary">Thêm danh mục mới</h4>
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken() <div class="mb-3">
+                    <label class="form-label">Tên danh mục</label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mô tả</label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary px-4">Lưu dữ liệu</button>
+                <a asp-action="Index" class="btn btn-secondary px-4">Quay lại</a>
+            </form>
+        </div>
+    </div>
+</div>
