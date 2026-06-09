@@ -31,7 +31,10 @@ namespace CMS.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
+<<<<<<< HEAD
                         .IsRequired()
+=======
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -43,6 +46,7 @@ namespace CMS.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CMS.Data.Entities.CategoryProduct", b =>
                 {
                     b.Property<int>("Id")
@@ -151,6 +155,8 @@ namespace CMS.Data.Migrations
                     b.ToTable("OrderDetails");
                 });
 
+=======
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
             modelBuilder.Entity("CMS.Data.Entities.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -184,6 +190,7 @@ namespace CMS.Data.Migrations
                     b.ToTable("Posts");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CMS.Data.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -218,6 +225,8 @@ namespace CMS.Data.Migrations
                     b.ToTable("Products");
                 });
 
+=======
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
             modelBuilder.Entity("CMS.Data.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -247,6 +256,7 @@ namespace CMS.Data.Migrations
                     b.ToTable("Users");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CMS.Data.Entities.Order", b =>
                 {
                     b.HasOne("CMS.Data.Entities.Customer", "Customer")
@@ -281,6 +291,12 @@ namespace CMS.Data.Migrations
                 {
                     b.HasOne("CMS.Data.Entities.Category", "Category")
                         .WithMany("Post")
+=======
+            modelBuilder.Entity("CMS.Data.Entities.Post", b =>
+                {
+                    b.HasOne("CMS.Data.Entities.Category", "Category")
+                        .WithMany("Posts")
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -288,6 +304,7 @@ namespace CMS.Data.Migrations
                     b.Navigation("Category");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CMS.Data.Entities.Product", b =>
                 {
                     b.HasOne("CMS.Data.Entities.CategoryProduct", "CategoryProduct")
@@ -317,6 +334,11 @@ namespace CMS.Data.Migrations
             modelBuilder.Entity("CMS.Data.Entities.Order", b =>
                 {
                     b.Navigation("OrderDetails");
+=======
+            modelBuilder.Entity("CMS.Data.Entities.Category", b =>
+                {
+                    b.Navigation("Posts");
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
                 });
 #pragma warning restore 612, 618
         }

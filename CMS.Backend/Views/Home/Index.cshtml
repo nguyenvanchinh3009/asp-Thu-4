@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model IEnumerable<CMS.Data.Entities.Post>
 
 @{
@@ -135,3 +136,43 @@
         }
     }
 </style>
+=======
+@model IEnumerable<CMS.Data.Entities.Post>
+@{
+    ViewData["Title"] = "Nguyễn Văn Chính - Cổng thông tin";
+}
+
+<section class="bg-primary text-white py-5 mb-5 shadow">
+    <div class="container text-center">
+        <h1 class="display-3 fw-bold">NGUYỄN VĂN CHÍNH</h1>
+        <p class="lead">Chào mừng đến với hệ thống CMS cá nhân.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row g-4">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var post in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card h-100 shadow border-0" style="transition: 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <img src="@post.ImageUrl" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="text-primary fw-bold text-uppercase" style="font-size:0.7rem;">@post.Category?.Name</span>
+                            <h5 class="card-title fw-bold mt-2">@post.Title</h5>
+                            <p class="card-text text-muted">@post.Content.Substring(0, Math.Min(post.Content.Length, 70))...</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center p-5 border">
+                <h3>Chưa có bài viết!</h3>
+            </div>
+        }
+    </div>
+</div>
+>>>>>>> bf8421308594fdc70a2f2729b121ae3dc4958834
